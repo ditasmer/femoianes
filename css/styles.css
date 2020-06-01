@@ -54,6 +54,9 @@ body{
     color: black;
     font-size: 18px;
     font-family: 'Lora', serif;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
 }
 .banner a{
     position: relative;
