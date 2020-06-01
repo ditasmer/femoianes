@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 *
 {
@@ -52,11 +53,14 @@ body{
     position: relative;
     color: black;
     font-size: 18px;
+    font-family: 'Lora', serif;
 }
 .banner a{
     position: relative;
     color: black;
     font-size: 18px;
+    font-family: 'Lora', serif;
+    text-decoration: none;
 }
 .content{
     position: relative;
