@@ -97,15 +97,15 @@ body{
 }
 .display-left{
     grid-area: left;
-    transform: translate(70%, 40%);
+    transform: translate(60%, 40%);
 }
 .display-center {
     grid-area: center;
-    transform: translate(-40%, -30%);
+    transform: translate(-55%, -20%);
   }
 .display-right {
     grid-area: right;
-    transform: translate(-50%, 70%);
+    transform: translate(-50%, 80%);
   }
 
 
