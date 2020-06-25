@@ -17,3 +17,15 @@ function playVideo(nom_video, nom_div) {
     v.pause();
   }
 }
+
+function getMediaList() {
+  fetch("http://mernatus.com/shared/media-list-moianes.json", {
+    // https://api.github.com/orgs/nodejs
+    mode: 'no-cors'
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data); // Prints result from `response.json()` in getRequest
+    })
+    .catch((error) => console.error(error));
+}
