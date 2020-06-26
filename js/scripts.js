@@ -18,14 +18,29 @@ function playVideo(nom_video, nom_div) {
   }
 }
 
+
+
 function getMediaList() {
-  fetch("http://mernatus.com/shared/media-list-moianes.json", {
-    // https://api.github.com/orgs/nodejs
-    mode: 'no-cors'
-  })
+  // fetch("http://mernatus.com/shared/media-list-moianes.json", {
+  //   mode: "no-cors",
+  //   headers: {
+  //     "Access-Control-Allow-Credentials": 'http://127.0.0.1:5500',
+  //   },
+  // })
+  fetch("http://mernatus.com/shared/media-list-moianes.json")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data); // Prints result from `response.json()` in getRequest
+      tableMedias(data);
     })
     .catch((error) => console.error(error));
+}
+
+function tableMedias(data) {
+  var contenido = document.querySelector('#content-media');
+  console.log(data);
+  console.log('hola');
+  contenido.innerHTML = '';
+  for(let val of data){
+    console.log(val.title)
+  }
 }
