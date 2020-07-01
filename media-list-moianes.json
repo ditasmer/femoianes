@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title":"Promo Serenart", 
+    "filename":"promo-serenart.mov", 
+    "autor":"John"
+  },
+  {
+    "id": 2,
+    "title":"Si es que hi ha cases d'algú", 
+    "filename":"siesquehiha.mov", 
+    "autor":"Mike"
+  },
+  {
+    "id": 3,
+    "title":"Territori seré", 
+    "filename":"territori-sere.mov", 
+    "autor":"Anne"
+  }
+]

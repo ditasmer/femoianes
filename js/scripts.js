@@ -27,7 +27,8 @@ function getMediaList() {
   //     "Access-Control-Allow-Credentials": 'http://127.0.0.1:5500',
   //   },
   // })
-  fetch("http://mernatus.com/shared/media-list-moianes.json")
+  // fetch("http://mernatus.com/shared/media-list-moianes.json")
+  fetch("media-list-moianes.json")
     .then((response) => response.json())
     .then((data) => {
       tableMedias(data);
@@ -41,6 +42,23 @@ function tableMedias(data) {
   console.log('hola');
   contenido.innerHTML = '';
   for(let val of data){
-    console.log(val.title)
+    //console.log(val.title)
+    // contenido.innerHTML += `
+    // <tr>
+    //   <th scope="row">1</th>
+    //   <td>Mark</td>
+    //   <td>Otto</td>
+    //   <td>Mdo</td>
+    // </tr>
+    
+    // `;
+    contenido.innerHTML += `
+    <tr>
+      <th scope="row">${ val.id }</th>
+      <td>${ val.title }</td>
+      <td>${ val.autor }</td>
+    </tr>
+    
+    `;
   }
 }
