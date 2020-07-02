@@ -24,11 +24,11 @@ function getMediaList() {
   // fetch("http://mernatus.com/shared/media-list-moianes.json", {
   //   mode: "no-cors",
   //   headers: {
-  //     "Access-Control-Allow-Credentials": 'http://127.0.0.1:5500',
+  //     "Access-Control-Allow-Origin" : "*", 
+  //     "Access-Control-Allow-Credentials": true,
   //   },
   // })
-  // fetch("http://mernatus.com/shared/media-list-moianes.json")
-  fetch("media-list-moianes.json")
+    fetch("media-list-moianes.json")
     .then((response) => response.json())
     .then((data) => {
       tableMedias(data);
@@ -42,16 +42,6 @@ function tableMedias(data) {
   console.log('hola');
   contenido.innerHTML = '';
   for(let val of data){
-    //console.log(val.title)
-    // contenido.innerHTML += `
-    // <tr>
-    //   <th scope="row">1</th>
-    //   <td>Mark</td>
-    //   <td>Otto</td>
-    //   <td>Mdo</td>
-    // </tr>
-    
-    // `;
     contenido.innerHTML += `
     <tr>
       <th scope="row">${ val.id }</th>
@@ -62,3 +52,43 @@ function tableMedias(data) {
     `;
   }
 }
+
+class SearchMedias {
+  constructor() {
+    this.medias = [
+      { nombre: "fr", edad: 23 },
+      { nombre: "frasdf", edad: 22 },
+      { nombre: "frou", edad: 2 },
+    ];
+    console.log(this.medias);
+    this.mediasBK = this.medias;
+    this.onInit();
+    console.log(this.medias);
+  }
+
+  onInit() {
+    let body_list = document.getElementById("body_list");
+    while (body_list.rows.length > 0) {
+      body_list.deleteRow(0);
+    }
+    this.medias.forEach((media) => {
+      let fila = body_list.insertRow(body_list.rows.length);
+      fila.insertCell(0).innerHTML = media.nombre;
+      fila.insertCell(1).innerHTML = media.edad;
+    });
+  }
+  search(id) {
+    let key_word = document.getElementById(id).value;
+    this.medias = this.mediasBK;
+    this.medias = this.medias.filter((media) => {
+      //return -1 when match
+      return media.nombre.toLowerCase().indexOf(key_word) > -1;
+    });
+    this.onInit();
+  }
+}
+let searcher = new SearchMedias();
+let form = document.getElementById("searchForm");
+form.addEventListener("submit", () => {
+  searcher.search("new_word");
+});
