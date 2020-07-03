@@ -91,6 +91,7 @@ class SearchMedias {
       let fila = body_list.insertRow(body_list.rows.length);
       fila.insertCell(0).innerHTML = media.id;
       fila.insertCell(1).innerHTML = media.title;
+      fila.insertCell(2).innerHTML = media.autor;
     });
   }
   search(id) {
