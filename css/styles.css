@@ -33,7 +33,9 @@ body{
     justify-content: center;
     align-items: center;
     transition: 0.2s;
-    clip-path: circle(50px at var(--x) var(--y));
+    -webkit-clip-path: circle(75px at var(--x) var(--y));
+	/*clip-path: circle(0% at 0 0);*/
+    clip-path: circle(75px at var(--x) var(--y));
     /* background: white; */
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -47,7 +49,8 @@ body{
 
 }
 .banner:active{
-    clip-path: circle(200px at var(--x) var(--y));
+    -webkit-clip-path: circle(400px at var(--x) var(--y));
+    clip-path: circle(400px at var(--x) var(--y));
 
 }
 .banner p{

@@ -5,6 +5,13 @@ pos.addEventListener("mousemove", (e) => {
   pos.style.setProperty("--y", e.clientY + "px");
 });
 
+pos.addEventListener('dblclick', show);
+function show(e) {
+  console.log("show");
+  var circle_element = document.querySelector('.banner');
+  circle_element.style.clipPath =  "circle(1000px at center)"
+}
+
 /**play video and player window open/close**/
 function playVideo(nom_video, nom_div) {
   console.log("playVideo");
