@@ -27,40 +27,10 @@ function playVideo(nom_video, nom_div) {
   }
 }
 
-/**fetch list from json file**/
-function getMediaList() {
-  // fetch("http://mernatus.com/shared/media-list-moianes.json", {
-  //   mode: "no-cors",
-  //   headers: {
-  //     "Access-Control-Allow-Origin" : "*", 
-  //     "Access-Control-Allow-Credentials": true,
-  //   },
-  // })
-    fetch("media-list-moianes.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("getMediaList");
-      tableMedias(data);
-    })
-    .catch((error) => console.error(error));
-}
-
 /**init table with empty data**/
 function tableMedias(someData) {
   console.log("tableMedias");
-  //var contenido = document.querySelector('#content-media');
   console.log(someData);
-  // contenido.innerHTML = '';
-  // for(let val of someData){
-  //   contenido.innerHTML += `
-  //   <tr>
-  //     <th scope="row">${ val.id }</th>
-  //     <td>${ val.title }</td>
-  //     <td>${ val.autor }</td>
-  //   </tr>
-    
-  //   `;
-  // }
   let body_list = document.getElementById("body_list");
   while (body_list.rows.length > 0) {
     body_list.deleteRow(0);
