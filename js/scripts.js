@@ -5,6 +5,7 @@ pos.addEventListener("mousemove", (e) => {
   pos.style.setProperty("--y", e.clientY + "px");
 });
 
+/**event dblclick disapear first div */
 pos.addEventListener('dblclick', show);
 function show(e) {
   console.log("show");
@@ -25,21 +26,6 @@ function playVideo(nom_video, nom_div) {
     x.style.display = "none";
     v.pause();
   }
-}
-
-/**init table with empty data**/
-function tableMedias(someData) {
-  console.log("tableMedias");
-  console.log(someData);
-  let body_list = document.getElementById("body_list");
-  while (body_list.rows.length > 0) {
-    body_list.deleteRow(0);
-  }
-  this.medias.forEach((media) => {
-    let fila = body_list.insertRow(body_list.rows.length);
-    fila.insertCell(0).innerHTML = media.nombre;
-    fila.insertCell(1).innerHTML = media.edad;
-  });
 }
 
 /**class filter searcher**/
