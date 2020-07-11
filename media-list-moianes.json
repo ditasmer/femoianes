@@ -6,6 +6,7 @@
     "description": "retrats al voltant de la taula",
     "dates": "7 al 21 de maig 2020",
     "place": "",
+    "comment": "",
     "author":"Mike"  },
   {
     "id": 2,
@@ -14,6 +15,7 @@
     "description": "cròniques populars d'un camí",
     "dates": "12, 13 i 26 de juny 2020",
     "place": "",
+    "comment": "",
     "author":"Anne"
   },
   {
@@ -23,6 +25,7 @@
     "description": "patrimoni ressuscitat",
     "dates": "17 i 19 de juliol 2020",
     "place": "NAMINA, HOTEL IOCANDI, BALAGO",
+    "comment": "Save the dates!",
     "author":"John"
   }
 ]

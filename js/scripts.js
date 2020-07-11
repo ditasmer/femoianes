@@ -76,7 +76,11 @@ class SearchMedias {
     this.medias.forEach((media) => {
       //let first_card2 = document.getElementsByTagName("p")[0];
       let content_card2 = document.createElement('a');
-      content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.dates + ``;
+      if(media.place && media.comment){
+        content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.place + `<br>`+ media.dates + `<br>`+ media.comment + ``;
+      }else{
+        content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.dates + ``;
+      }
       card2[i].appendChild(content_card2);
       i++;
     });
