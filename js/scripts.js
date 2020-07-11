@@ -32,9 +32,9 @@ function playVideo(nom_video, nom_div) {
 class SearchMedias {
   constructor() {
     this.medias = [
-      { id: 1, title: "...", filename: "---", autor: "+++" },
-      { id: 2, title: "...", filename: "---", autor: "+++" },
-      { id: 3, title: "...", filename: "---", autor: "+++" },
+      { id: 1, title: "...", filename: "---", author: "+++" },
+      { id: 2, title: "...", filename: "---", author: "+++" },
+      { id: 3, title: "...", filename: "---", author: "+++" },
 
     ];
     console.log("SearchMedias constructor");
@@ -52,7 +52,7 @@ class SearchMedias {
  
     //create custom innerHTML
     let content_card = document.createElement('a');
-    content_card.innerHTML =`<a href='#' onclick='playVideo('siesquehiha', 'div-siesquehiha')'>#siesquehihacasesdalgu </a> <br>retrats al voltant de la taula<br>7 al 21 de maig 2020`;
+    content_card.innerHTML =`<a href='#' onclick='playVideo('siesquehihacasesdalgu', 'div-siesquehihacasesdalgu')'>#siesquehihacasesdalgu </a> <br>retrats al voltant de la taula<br>7 al 21 de maig 2020`;
     first_card.appendChild(content_card);
  
     //clean body cards
@@ -65,18 +65,30 @@ class SearchMedias {
         card.removeChild(card.childNodes[0]);
       }
     }
-    
     //clean body list
     while (body_list.rows.length > 0) {
       body_list.deleteRow(0);
     }
+
+    //add body cards
+    let card2 = document.getElementsByTagName("p");
+    let i = 0;
+    this.medias.forEach((media) => {
+      //let first_card2 = document.getElementsByTagName("p")[0];
+      let content_card2 = document.createElement('a');
+      content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.dates + ``;
+      card2[i].appendChild(content_card2);
+      i++;
+    });
+    //add body list
     this.medias.forEach((media) => {
       let fila = body_list.insertRow(body_list.rows.length);
       fila.insertCell(0).innerHTML = media.id;
       fila.insertCell(1).innerHTML = media.title;
-      fila.insertCell(2).innerHTML = media.autor;
+      fila.insertCell(2).innerHTML = media.author;
     });
   }
+
   search(id) {
     console.log("search");
     let key_word = document.getElementById(id).value;
@@ -85,9 +97,7 @@ class SearchMedias {
     this.medias = this.medias.filter((media) => {
       //return -1 when match
       return media.title.toLowerCase().indexOf(key_word.toLowerCase()) > -1;
-    });
-    
-
+    });   
     this.onInit();
   }
  

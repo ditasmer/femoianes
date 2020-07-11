@@ -1,20 +1,28 @@
 [
   {
     "id": 1,
-    "title":"Promo Serenart", 
-    "filename":"promo-serenart.mov", 
-    "autor":"John"
-  },
+    "title":"#siesquehihacasesdalgu", 
+    "filename":"siesquehihacasesdalgu", 
+    "description": "retrats al voltant de la taula",
+    "dates": "7 al 21 de maig 2020",
+    "place": "",
+    "author":"Mike"  },
   {
     "id": 2,
-    "title":"Si es que hi ha cases d'algú", 
-    "filename":"siesquehiha.mov", 
-    "autor":"Mike"
+    "title":"#territorisere", 
+    "filename":"territorisere", 
+    "description": "cròniques populars d'un camí",
+    "dates": "12, 13 i 26 de juny 2020",
+    "place": "",
+    "author":"Anne"
   },
   {
     "id": 3,
-    "title":"Territori seré", 
-    "filename":"territori-sere.mov", 
-    "autor":"Anne"
+    "title":"#festivalserenart", 
+    "filename":"festivalserenart", 
+    "description": "patrimoni ressuscitat",
+    "dates": "17 i 19 de juliol 2020",
+    "place": "NAMINA, HOTEL IOCANDI, BALAGO",
+    "author":"John"
   }
 ]
