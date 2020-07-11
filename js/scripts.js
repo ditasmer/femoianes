@@ -47,6 +47,26 @@ class SearchMedias {
   onInit() {
     console.log("onInit");
     let body_list = document.getElementById("body_list");
+    let body_cards = document.getElementsByClassName("body_card");
+    let first_card = document.getElementsByTagName("p")[0];
+ 
+    //create custom innerHTML
+    let content_card = document.createElement('a');
+    content_card.innerHTML =`<a href='#' onclick='playVideo('siesquehiha', 'div-siesquehiha')'>#siesquehihacasesdalgu </a> <br>retrats al voltant de la taula<br>7 al 21 de maig 2020`;
+    first_card.appendChild(content_card);
+ 
+    //clean body cards
+    for (let card of body_cards){
+      console.log(card);
+      //card.removeChild(card.childNodes[0]);
+      while (card.childNodes.length > 0){
+        //document.getElementsByClassName("body_card")[0].removeChild(document.getElementsByClassName("body_card")[0].childNodes[0])
+        //body_cards[0].removeChild(body_cards[0].childNodes[0]);
+        card.removeChild(card.childNodes[0]);
+      }
+    }
+    
+    //clean body list
     while (body_list.rows.length > 0) {
       body_list.deleteRow(0);
     }
