@@ -7,7 +7,9 @@
     "dates": "7 al 21 de maig 2020",
     "place": "",
     "comment": "",
-    "author":"Mike"  },
+    "author":"Mike",
+    "type": "video"
+  },
   {
     "id": 2,
     "title":"#territorisere", 
@@ -16,7 +18,8 @@
     "dates": "12, 13 i 26 de juny 2020",
     "place": "",
     "comment": "",
-    "author":"Anne"
+    "author":"Anne",
+    "type": "video"
   },
   {
     "id": 3,
@@ -26,6 +29,73 @@
     "dates": "17 i 19 de juliol 2020",
     "place": "NAMINA, HOTEL IOCANDI, BALAGO",
     "comment": "Save the dates!",
-    "author":"John"
+    "author":"John",
+    "type": "video"
+  },
+  {
+    "id": 4,
+    "title":"#siesquehihacasesdalgu", 
+    "filename":"siesquehihacasesdalgu-01", 
+    "description": "",
+    "dates": "",
+    "place": "",
+    "comment": "",
+    "author":"Mar",
+    "type": "image"
+  },
+  {
+    "id": 5,
+    "title":"#siesquehihacasesdalgu", 
+    "filename":"siesquehihacasesdalgu-02", 
+    "description": "",
+    "dates": "",
+    "place": "",
+    "comment": "",
+    "author":"John",
+    "type": "image"
+  },
+  {
+    "id": 6,
+    "title":"#siesquehihacasesdalgu", 
+    "filename":"siesquehihacasesdalgu-03", 
+    "description": "",
+    "dates": "",
+    "place": "",
+    "comment": "",
+    "author":"John",
+    "type": "image"
+  },
+  {
+    "id": 7,
+    "title":"#siesquehihacasesdalgu", 
+    "filename":"siesquehihacasesdalgu-04", 
+    "description": "",
+    "dates": "",
+    "place": "",
+    "comment": "",
+    "author":"John",
+    "type": "image"
+  },
+  {
+    "id": 8,
+    "title":"#siesquehihacasesdalgu", 
+    "filename":"siesquehihacasesdalgu-05", 
+    "description": "",
+    "dates": "",
+    "place": "",
+    "comment": "",
+    "author":"John",
+    "type": "image"
+  },
+  {
+    "id": 9,
+    "title":"#siesquehihacasesdalgu", 
+    "filename":"siesquehihacasesdalgu-06", 
+    "description": "",
+    "dates": "",
+    "place": "",
+    "comment": "",
+    "author":"John",
+    "type": "image"
   }
 ]

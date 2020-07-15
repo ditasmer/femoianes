@@ -66,31 +66,39 @@ class SearchMedias {
       }
     }
     //clean body list
-    while (body_list.rows.length > 0) {
-      body_list.deleteRow(0);
-    }
+    // while (body_list.rows.length > 0) {
+    //   body_list.deleteRow(0);
+    // }
 
     //add body cards
     let card2 = document.getElementsByTagName("p");
+    console.log(card2.length);
     let i = 0;
     this.medias.forEach((media) => {
       //let first_card2 = document.getElementsByTagName("p")[0];
       let content_card2 = document.createElement('a');
-      if(media.place && media.comment){
-        content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.place + `<br>`+ media.dates + `<br>`+ media.comment + ``;
+      if(media.type == "video"){
+        if(media.place && media.comment){
+          content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.place + `<br>`+ media.dates + `<br>`+ media.comment + ``;
+        }else{
+          content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.dates + ``;
+        }
       }else{
-        content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.dates + ``;
+        if(media.type == "image") {
+          console.log("es image");
+          content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>`;
+        }
       }
       card2[i].appendChild(content_card2);
       i++;
     });
     //add body list
-    this.medias.forEach((media) => {
-      let fila = body_list.insertRow(body_list.rows.length);
-      fila.insertCell(0).innerHTML = media.id;
-      fila.insertCell(1).innerHTML = media.title;
-      fila.insertCell(2).innerHTML = media.author;
-    });
+    // this.medias.forEach((media) => {
+    //   let fila = body_list.insertRow(body_list.rows.length);
+    //   fila.insertCell(0).innerHTML = media.id;
+    //   fila.insertCell(1).innerHTML = media.title;
+    //   fila.insertCell(2).innerHTML = media.author;
+    // });
   }
 
   search(id) {
