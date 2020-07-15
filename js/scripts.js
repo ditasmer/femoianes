@@ -28,6 +28,19 @@ function playVideo(nom_video, nom_div) {
   }
 }
 
+/**maximize image**/
+function maxImage(nom_video, nom_div) {
+  console.log("maxImage");
+  var x = document.getElementById(nom_div);
+  var v = document.getElementById(nom_video);
+  var x = document.createElement("IMG");
+  x.setAttribute("src", "http://mernatus.com/shared/siesquehihacasesdalgu-01.jpeg");
+  x.setAttribute("width", "304");
+  x.setAttribute("height", "228");
+  x.setAttribute("alt", "The Pulpit Rock");
+  document.body.appendChild(x);
+}
+
 /**class filter searcher**/
 class SearchMedias {
   constructor() {
@@ -77,19 +90,29 @@ class SearchMedias {
     this.medias.forEach((media) => {
       //let first_card2 = document.getElementsByTagName("p")[0];
       let content_card2 = document.createElement('a');
+      let content_card_img = document.createElement('img');
+      let url = 'http://mernatus.com/shared/';
       if(media.type == "video"){
         if(media.place && media.comment){
           content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.place + `<br>`+ media.dates + `<br>`+ media.comment + ``;
         }else{
           content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.dates + ``;
         }
+        card2[i].appendChild(content_card2);
       }else{
         if(media.type == "image") {
           console.log("es image");
-          content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>`;
+          //content_card_img.setAttribute('src', 'http://mernatus.com/shared/siesquehihacasesdalgu-01.jpeg');
+          content_card_img.setAttribute('src', url+media.filename+'.jpeg');
+          content_card_img.setAttribute("width", "100");
+          content_card_img.setAttribute("height", "100");
+          content_card_img.setAttribute("alt", "The Pulpit Rock");
+          content_card_img.setAttribute("style", "filter: invert(1)");
+          card2[i].appendChild(content_card_img);
+          /*document.getElementsByTagName("p")[5].getElementsByTagName("img")[0].setAttribute('src', 'http://mernatus.com/shared/siesquehihacasesdalgu-01.jpeg')*/
         }
       }
-      card2[i].appendChild(content_card2);
+      
       i++;
     });
     //add body list
