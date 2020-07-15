@@ -59,39 +59,25 @@ class SearchMedias {
 
   onInit() {
     console.log("onInit");
-    let body_list = document.getElementById("body_list");
     let body_cards = document.getElementsByClassName("body_card");
-    let first_card = document.getElementsByTagName("p")[0];
- 
-    //create custom innerHTML
-    let content_card = document.createElement('a');
-    content_card.innerHTML =`<a href='#' onclick='playVideo('siesquehihacasesdalgu', 'div-siesquehihacasesdalgu')'>#siesquehihacasesdalgu </a> <br>retrats al voltant de la taula<br>7 al 21 de maig 2020`;
-    first_card.appendChild(content_card);
  
     //clean body cards
     for (let card of body_cards){
       console.log(card);
-      //card.removeChild(card.childNodes[0]);
       while (card.childNodes.length > 0){
-        //document.getElementsByClassName("body_card")[0].removeChild(document.getElementsByClassName("body_card")[0].childNodes[0])
-        //body_cards[0].removeChild(body_cards[0].childNodes[0]);
         card.removeChild(card.childNodes[0]);
       }
     }
-    //clean body list
-    // while (body_list.rows.length > 0) {
-    //   body_list.deleteRow(0);
-    // }
 
     //add body cards
-    let card2 = document.getElementsByTagName("p");
+    let card2 = document.getElementsByClassName("body_card");
     console.log(card2.length);
     let i = 0;
     this.medias.forEach((media) => {
-      //let first_card2 = document.getElementsByTagName("p")[0];
       let content_card2 = document.createElement('a');
       let content_card_img = document.createElement('img');
       let url = 'http://mernatus.com/shared/';
+      //video medias
       if(media.type == "video"){
         if(media.place && media.comment){
           content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.place + `<br>`+ media.dates + `<br>`+ media.comment + ``;
@@ -100,28 +86,21 @@ class SearchMedias {
         }
         card2[i].appendChild(content_card2);
       }else{
+        //image medias
         if(media.type == "image") {
           console.log("es image");
-          //content_card_img.setAttribute('src', 'http://mernatus.com/shared/siesquehihacasesdalgu-01.jpeg');
           content_card_img.setAttribute('src', url+media.filename+'.jpeg');
           content_card_img.setAttribute("width", "100");
           content_card_img.setAttribute("height", "100");
           content_card_img.setAttribute("alt", "The Pulpit Rock");
           content_card_img.setAttribute("style", "filter: invert(1)");
           card2[i].appendChild(content_card_img);
-          /*document.getElementsByTagName("p")[5].getElementsByTagName("img")[0].setAttribute('src', 'http://mernatus.com/shared/siesquehihacasesdalgu-01.jpeg')*/
         }
       }
       
       i++;
     });
-    //add body list
-    // this.medias.forEach((media) => {
-    //   let fila = body_list.insertRow(body_list.rows.length);
-    //   fila.insertCell(0).innerHTML = media.id;
-    //   fila.insertCell(1).innerHTML = media.title;
-    //   fila.insertCell(2).innerHTML = media.author;
-    // });
+
   }
 
   search(id) {
