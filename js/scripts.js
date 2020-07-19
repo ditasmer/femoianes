@@ -53,11 +53,12 @@ class SearchMedias {
     console.log("SearchMedias constructor");
     console.log(this.medias);
     this.mediasBK = this.medias;
-    this.onInit();
+    //this.onInit();
+    this.onInitPrintResults();
     console.log(this.medias);
   }
 
-  onInit() {
+  onInitPrintResults() {
     console.log("onInit");
     let body_cards = document.getElementsByClassName("body_card");
  
@@ -127,7 +128,7 @@ class SearchMedias {
           card_link.appendChild(text);
           card_img.setAttribute('src', url+media.filename+'.jpeg');
           card_img.setAttribute("width", "100");
-          card_img.setAttribute("height", "100");
+          //card_img.setAttribute("height", "100");
           card_img.setAttribute("alt", "The Pulpit Rock");
           card_img.setAttribute("style", "filter: invert(1)");
           card_link.appendChild(card_img);
@@ -140,6 +141,19 @@ class SearchMedias {
 
   }
 
+  onInitCleanSreen() {
+    console.log("onInit");
+    let body_cards = document.getElementsByClassName("body_card");
+ 
+    //clean body cards
+    for (let card of body_cards){
+      console.log(card);
+      while (card.childNodes.length > 0){
+        card.removeChild(card.childNodes[0]);
+      }
+    }
+  }
+
   search(id) {
     console.log("search");
     let key_word = document.getElementById(id).value;
@@ -149,13 +163,15 @@ class SearchMedias {
       //return -1 when match
       return media.title.toLowerCase().indexOf(key_word.toLowerCase()) > -1;
     });   
-    this.onInit();
+    //this.onInit();
+    this.onInitPrintResults();
   }
  
   refresh(dataJson){
     this.medias = dataJson;
     this.mediasBK = this.medias;
-    this.onInit();
+    //this.onInit();
+    this.onInitCleanSreen();
   }
 }
 let searcher = new SearchMedias();
