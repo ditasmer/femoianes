@@ -141,7 +141,7 @@ class SearchMedias {
 
   }
 
-  onInitCleanSreen() {
+  onInitCleanScreen() {
     console.log("onInit");
     let body_cards = document.getElementsByClassName("body_card");
  
@@ -164,14 +164,18 @@ class SearchMedias {
       return media.title.toLowerCase().indexOf(key_word.toLowerCase()) > -1;
     });   
     //this.onInit();
-    this.onInitPrintResults();
+    if((this.medias.length === 0) || (key_word==="")){
+      this.onInitCleanScreen();
+    }else{
+      this.onInitPrintResults();
+    }
   }
  
   refresh(dataJson){
     this.medias = dataJson;
     this.mediasBK = this.medias;
     //this.onInit();
-    this.onInitCleanSreen();
+    this.onInitCleanScreen();
   }
 }
 let searcher = new SearchMedias();
