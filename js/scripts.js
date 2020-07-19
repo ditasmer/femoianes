@@ -185,7 +185,7 @@ form.addEventListener("submit", () => {
 });
 
 /**init local json data onload**/
-const promiseOfSomeJsonData = fetch("media-list-moianes.json")
+const promiseOfSomeJsonData = fetch("media-list-.json")
   .then((response) => response.json())
   .then((data) => {
     console.log("in async");
