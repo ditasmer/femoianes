@@ -74,27 +74,64 @@ class SearchMedias {
     console.log(card2.length);
     let i = 0;
     this.medias.forEach((media) => {
-      let content_card2 = document.createElement('a');
-      let content_card_img = document.createElement('img');
+      let card_video = document.createElement('a');
+      let card_img = document.createElement('img');
+      let card_link = document.createElement('a');
       let url = 'http://mernatus.com/shared/';
       //video medias
       if(media.type == "video"){
         if(media.place && media.comment){
-          content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.place + `<br>`+ media.dates + `<br>`+ media.comment + ``;
+          //card_video.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.place + `<br>`+ media.dates + `<br>`+ media.comment + ``;
+          card_video.setAttribute('href', '#');
+          card_video.setAttribute('onclick', 'playVideo("'+media.filename+'","div-'+media.filename+'")');
+          card_video.setAttribute('style', 'display: inline-grid; text-align: -webkit-center');
+          let text = document.createTextNode(media.title);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.description);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.place);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.dates);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.comment);
+          card_video.appendChild(text);
+          
         }else{
-          content_card2.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.dates + ``;
+          //card_video.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.dates + ``;
+          card_video.setAttribute('href', '#');
+          card_video.setAttribute('onclick', 'playVideo("'+media.filename+'","div-'+media.filename+'")');
+          card_video.setAttribute('style', 'display: inline-grid; text-align: -webkit-center');
+          let text = document.createTextNode(media.title);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.description);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.dates);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
         }
-        card2[i].appendChild(content_card2);
+        card2[i].appendChild(card_video);
       }else{
         //image medias
         if(media.type == "image") {
           console.log("es image");
-          content_card_img.setAttribute('src', url+media.filename+'.jpeg');
-          content_card_img.setAttribute("width", "100");
-          content_card_img.setAttribute("height", "100");
-          content_card_img.setAttribute("alt", "The Pulpit Rock");
-          content_card_img.setAttribute("style", "filter: invert(1)");
-          card2[i].appendChild(content_card_img);
+          card_link.setAttribute('href', url+media.filename+'.jpeg');
+          card_link.setAttribute('target', '_blank');
+          card_link.setAttribute('style', 'display: inline-grid; text-align: -webkit-center');
+          let text = document.createTextNode('#'+media.filename);
+          card_link.appendChild(text);
+          card_img.setAttribute('src', url+media.filename+'.jpeg');
+          card_img.setAttribute("width", "100");
+          card_img.setAttribute("height", "100");
+          card_img.setAttribute("alt", "The Pulpit Rock");
+          card_img.setAttribute("style", "filter: invert(1)");
+          card_link.appendChild(card_img);
+          card2[i].appendChild(card_link);
         }
       }
       
