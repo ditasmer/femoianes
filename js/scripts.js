@@ -254,3 +254,42 @@ window.onload = async () => {
   //refresh searcher medias and mediasBK
   searcher.refresh(dataJson);
 };
+
+fly.onmousedown = function(event) {
+  let shiftX = event.clientX - fly.getBoundingClientRect().left;
+  let shiftY = event.clientY - fly.getBoundingClientRect().top;
+  // (1) prepare to moving: make absolute and on top by z-index
+  fly.style.position = 'absolute';
+  fly.style.zIndex = 1000;
+
+  // move it out of any current parents directly into body
+  // to make it positioned relative to the body
+  document.body.append(fly);
+
+  // centers the fly at (pageX, pageY) coordinates
+  function moveAt(pageX, pageY) {
+    // fly.style.left = pageX - fly.offsetWidth / 2 + 'px';
+    // fly.style.top = pageY - fly.offsetHeight / 2 + 'px';
+    fly.style.left = pageX - shiftX + 'px';
+    fly.style.top = pageY - shiftY + 'px';
+  }
+
+  // move our absolutely positioned fly under the pointer
+  moveAt(event.pageX, event.pageY);
+
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+
+  // (2) move the fly on mousemove
+  document.addEventListener('mousemove', onMouseMove);
+
+  // (3) drop the fly, remove unneeded handlers
+  fly.onmouseup = function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    fly.onmouseup = null;
+  };
+  fly.ondragstart = function() {
+    return false;
+  };
+};
