@@ -8,7 +8,8 @@
     "place": "",
     "comment": "",
     "author":"Mike",
-    "type": "video"
+    "type": "video",
+    "selection": "init"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "place": "",
     "comment": "",
     "author":"Anne",
-    "type": "video"
+    "type": "video",
+    "selection": "init"
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "place": "NAMINA, HOTEL IOCANDI, BALAGO",
     "comment": "Save the dates!",
     "author":"John",
-    "type": "video"
+    "type": "video",
+    "selection": "init"
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "place": "",
     "comment": "",
     "author":"Mar",
-    "type": "image"
+    "type": "image",
+    "selection": "simple"
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "place": "",
     "comment": "",
     "author":"John",
-    "type": "image"
+    "type": "image",
+    "selection": "simple"
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "place": "",
     "comment": "",
     "author":"John",
-    "type": "image"
+    "type": "image",
+    "selection": "simple"
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "place": "",
     "comment": "",
     "author":"John",
-    "type": "image"
+    "type": "image",
+    "selection": "simple"
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "place": "",
     "comment": "",
     "author":"John",
-    "type": "image"
+    "type": "image",
+    "selection": "simple"
   },
   {
     "id": 9,
@@ -96,6 +104,67 @@
     "place": "",
     "comment": "",
     "author":"John",
-    "type": "image"
+    "type": "image",
+    "selection": "simple"
+  },
+  {
+    "id": 10,
+    "title":"#festivaldenit", 
+    "filename":"festivalserenart", 
+    "description": "patrimoni ressuscitat",
+    "dates": "17 i 19 de juliol 2020",
+    "place": "NAMINA, HOTEL IOCANDI, BALAGO",
+    "comment": "Save the dates!",
+    "author":"John",
+    "type": "video",
+    "selection": "init"
+  },
+  {
+    "id": 11,
+    "title":"#summerfestival", 
+    "filename":"festivalserenart", 
+    "description": "patrimoni ressuscitat",
+    "dates": "17 i 19 de juliol 2020",
+    "place": "",
+    "comment": "",
+    "author":"John",
+    "type": "video",
+    "selection": "init"
+  },
+  {
+    "id": 12,
+    "title":"#caminsmoianes", 
+    "filename":"festivalserenart", 
+    "description": "patrimoni ressuscitat",
+    "dates": "17 i 19 de juliol 2020",
+    "place": "NAMINA, HOTEL IOCANDI, BALAGO",
+    "comment": "Save the dates!",
+    "author":"John",
+    "type": "video",
+    "selection": "init"
+  },
+  {
+    "id": 13,
+    "title":"#celserenart", 
+    "filename":"festivalserenart", 
+    "description": "patrimoni ressuscitat",
+    "dates": "17 i 19 de juliol 2020",
+    "place": "",
+    "comment": "",
+    "author":"John",
+    "type": "video",
+    "selection": "init"
+  },
+  {
+    "id": 14,
+    "title":"#territoridalgu", 
+    "filename":"festivalserenart", 
+    "description": "patrimoni ressuscitat",
+    "dates": "17 i 19 de juliol 2020",
+    "place": "",
+    "comment": "",
+    "author":"John",
+    "type": "video",
+    "selection": "init"
   }
 ]
