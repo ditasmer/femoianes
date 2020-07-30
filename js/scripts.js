@@ -201,6 +201,6 @@ window.onload = async () => {
 
   //refresh searcher medias and mediasBK
   searcher.refresh(dataJson);
-  //show 3 videos onload
+  ////show 3 videos onload
   //searcher.searchsearch("new_word");
 };
