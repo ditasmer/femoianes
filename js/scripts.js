@@ -181,7 +181,7 @@ class SearchMedias {
 let searcher = new SearchMedias();
 let form = document.getElementById("searchForm");
 form.addEventListener("submit", () => {
-  searcher.search("new_word");
+  searcher.searchsearch("new_word");
 });
 
 /**init local json data onload**/
@@ -201,4 +201,6 @@ window.onload = async () => {
 
   //refresh searcher medias and mediasBK
   searcher.refresh(dataJson);
+  //show 3 videos onload
+  //searcher.searchsearch("new_word");
 };
