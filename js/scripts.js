@@ -208,13 +208,24 @@ class SearchMedias {
 
   search(id) {
     console.log("search");
-    let key_word = document.getElementById(id).value;
+    let key_word = "";
     this.medias = this.mediasBK;
-    let res = false;
-    this.medias = this.medias.filter((media) => {
-      //return -1 when match
-      return media.title.toLowerCase().indexOf(key_word.toLowerCase()) > -1;
-    });   
+    if(id == "new_word"){
+      console.log("es buscar");
+      key_word = document.getElementById(id).value;
+      this.medias = this.medias.filter((media) => {
+        //return -1 when match
+        return media.title.toLowerCase().indexOf(key_word.toLowerCase()) > -1;
+      });   
+    }else{
+      console.log("no es buscar");
+      key_word = "video";
+      this.medias = this.medias.filter((media) => {
+        //return -1 when match
+        return media.type.toLowerCase().indexOf(key_word.toLowerCase()) > -1;
+      });   
+    } 
+    
     //this.onInit();
     if((this.medias.length === 0) || (key_word==="")){
       this.onInitCleanScreen();
@@ -233,7 +244,7 @@ class SearchMedias {
 let searcher = new SearchMedias();
 let form = document.getElementById("searchForm");
 form.addEventListener("submit", () => {
-  searcher.searchsearch("new_word");
+  searcher.search("new_word");
 });
 
 /**init local json data onload**/
@@ -254,5 +265,5 @@ window.onload = async () => {
   //refresh searcher medias and mediasBK
   searcher.refresh(dataJson);
   ////show 3 videos onload
-  //searcher.searchsearch("new_word");
+  searcher.search("video");
 };
