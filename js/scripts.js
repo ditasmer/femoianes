@@ -152,6 +152,58 @@ class SearchMedias {
         card.removeChild(card.childNodes[0]);
       }
     }
+
+    //add Inicial video body cards
+    let card2 = document.getElementsByClassName("body_card");
+    console.log(card2.length);
+    let i = 0;
+    this.medias.forEach((media) => {
+      let card_video = document.createElement('a');
+      let url = 'http://mernatus.com/shared/';
+      //video medias
+      if(media.selection == "init"){
+        if(media.place && media.comment){
+          //card_video.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.place + `<br>`+ media.dates + `<br>`+ media.comment + ``;
+          card_video.setAttribute('href', '#');
+          card_video.setAttribute('onclick', 'playVideo("'+media.filename+'","div-'+media.filename+'")');
+          card_video.setAttribute('style', 'display: inline-grid; text-align: -webkit-center');
+          let text = document.createTextNode(media.title);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.description);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.place);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.dates);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.comment);
+          card_video.appendChild(text);
+          
+        }else{
+          //card_video.innerHTML =`<a href='#' onclick="playVideo('`+media.filename+`', 'div-`+media.filename+`')">` + media.title + ` </a> <br>` + media.description + `<br>`+ media.dates + ``;
+          card_video.setAttribute('href', '#');
+          card_video.setAttribute('onclick', 'playVideo("'+media.filename+'","div-'+media.filename+'")');
+          card_video.setAttribute('style', 'display: inline-grid; text-align: -webkit-center');
+          let text = document.createTextNode(media.title);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.description);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+          text = document.createTextNode(media.dates);
+          card_video.appendChild(text);
+          card_video.innerHTML += `<br>`;
+        }
+        card2[i].appendChild(card_video);
+        i++;
+      }
+      
+      
+    });
+
   }
 
   search(id) {
